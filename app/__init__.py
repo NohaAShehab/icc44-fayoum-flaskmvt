@@ -21,6 +21,9 @@ def create_app(config_name='dev'):
     # Connect db object with app
     db.init_app(app)
 
+    # register url
+    from app.students.views import  index
+    app.add_url_rule("/students", view_func=index , endpoint='students.index')
 
 
 

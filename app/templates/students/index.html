@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1> All Students </h1>
+    <table class="table">
+        <tr> <th> ID</th> <th> Name </th>
+            <th> Image</th>
+        </tr>
+
+        {% for student in students %}
+            <tr>
+                <td>{{student.id}}</td>
+                <td> {{student.name}}</td>
+                <td> <img src="{{student.image_url}}" width="100" height="100"> </td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}

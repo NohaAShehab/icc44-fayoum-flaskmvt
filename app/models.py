@@ -1,4 +1,5 @@
 from flask_sqlalchemy import  SQLAlchemy
+from flask import  url_for
 
 db= SQLAlchemy()
 
@@ -16,4 +17,7 @@ class Student(db.Model):
     def __str__(self):
         return f"{self.name}"
 
+    @property
+    def image_url(self):
+        return url_for('static', filename=f"students/images/{self.image}")
 
