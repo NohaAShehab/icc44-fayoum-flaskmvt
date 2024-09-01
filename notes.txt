@@ -16,3 +16,9 @@ first of all
 3- add models
 4- run command flask db migrate -m 'message'  --> generate migration files
 flask db upgrade
+
+
+
+#################### switch to postgres --> ??
+Don't forget to install pyscopg2
+### use the same migration files to create tables in postgres

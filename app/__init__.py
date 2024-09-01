@@ -11,12 +11,13 @@ from app.models import db
 from flask_migrate import Migrate
 
 # 1- create app
-def create_app(config_name='dev'):
+def create_app(config_name='prd'):
 
     app = Flask(__name__)
 
     current_config = config_options[config_name]  # Class of config
     # configure app with db. ,
+    print(current_config)
     app.config['SQLALCHEMY_DATABASE_URI'] = current_config.SQLALCHEMY_DATABASE_URI
     # another way
     app.config.from_object(current_config)  # read need config. for app from the given class
@@ -37,6 +38,8 @@ def create_app(config_name='dev'):
         flask db init  # generate migration directory
         # to generate migration files
         flask db migrate  -m 'create students table'
+        # to apply migration 
+        flask db upgrade 
         
     """
 
