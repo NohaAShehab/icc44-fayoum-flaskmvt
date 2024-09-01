@@ -1,0 +1,18 @@
+
+
+I need the structure --
+    --> sql-alcahmy --> model
+
+
+We need to create migration files
+    --> version control for your project
+    --> regardless dbms  --> works well with the project
+
+
+https://flask-migrate.readthedocs.io/en/latest/
+first of all
+1- drop existing db
+2- run command flask db init ---create new migration directory
+3- add models
+4- run command flask db migrate -m 'message'  --> generate migration files
+flask db upgrade

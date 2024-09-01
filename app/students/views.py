@@ -1,3 +1,5 @@
+from crypt import methods
+
 from app.models import Student, db
 from flask import render_template, request, redirect, url_for
 from app.students import  student_blueprint
@@ -30,10 +32,13 @@ def create():
 
 
 
-@student_blueprint.route("<int:id>/delete", endpoint="delete")
+@student_blueprint.route("<int:id>/delete", endpoint="delete", methods=['POST'])
 def delete(id):
     student = db.get_or_404(Student, id)
     db.session.delete(student)
     db.session.commit()
     return redirect(url_for("students.index"))
+
+
+# add route for edit --> complete the logic
 

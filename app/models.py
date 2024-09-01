@@ -12,6 +12,7 @@ class Student(db.Model):
     name = db.Column(db.String(100))
     image = db.Column(db.String(100), nullable=True)
     grade = db.Column(db.Integer, nullable=True)
+    age = db.Column(db.Integer, nullable=True)
 
 
     def __str__(self):
@@ -28,4 +29,5 @@ class Student(db.Model):
     @property
     def delete_url(self):
         return url_for('students.delete', id=self.id)
+
 
