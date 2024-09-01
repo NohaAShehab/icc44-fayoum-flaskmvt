@@ -21,3 +21,11 @@ class Student(db.Model):
     def image_url(self):
         return url_for('static', filename=f"students/images/{self.image}")
 
+    @property
+    def show_url(self):
+        return url_for('students.show', id=self.id)
+
+    @property
+    def delete_url(self):
+        return url_for('students.delete', id=self.id)
+

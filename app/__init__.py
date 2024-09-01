@@ -22,8 +22,12 @@ def create_app(config_name='dev'):
     db.init_app(app)
 
     # register url
-    from app.students.views import  index
-    app.add_url_rule("/students", view_func=index , endpoint='students.index')
+    # from app.students.views import  index
+    # app.add_url_rule("/students", view_func=index , endpoint='students.index')
+
+    # I need to ask app to use ?? blueprint
+    from app.students import student_blueprint
+    app.register_blueprint(student_blueprint)
 
 
 
